@@ -1,3 +1,4 @@
+//테스트 케이스 5번에서 계속 막힘ㅠㅠ
 #include<iostream>
 #include<algorithm>
 #include<vector>
@@ -10,17 +11,20 @@ int solution(int n, vector<int>lost, vector<int> reserve) {
 	sort(reserve.begin(), reserve.end());
 	for (int i = 0; i < reserve.size(); i++) {
 		int standard = reserve[i];
-		vector<int>::iterator front = find(lost.begin(), lost.end(), standard-1);
+
 		vector<int>::iterator self = find(lost.begin(), lost.end(), standard);
-		vector<int>::iterator back = find(lost.begin(), lost.end(), standard + 1);
 		if (self != lost.end()) { //내체육복 없음
 			lost.erase(self);
 			continue;
 		}
+
+		vector<int>::iterator front = find(lost.begin(), lost.end(), standard-1);
 		if (front != lost.end()) { //앞에 친구 체육복 없음.
 			lost.erase(front); //앞친구한테 빌려줌
 			continue;
 		}
+
+		vector<int>::iterator back = find(lost.begin(), lost.end(), standard + 1);
 		if (back != lost.end()){
 				lost.erase(back);
 		}
