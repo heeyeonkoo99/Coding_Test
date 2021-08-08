@@ -3,18 +3,18 @@
 #include<vector>
 using namespace std;
 
-int solution(vector<int> people, int limit) { //효율성 test실패
+int solution(vector<int> people, int limit) { //효율성 test실패 ==> index로 범위 관리
 	int res = 0;
+	int startIdx = 0;
+	int lastIdx = people.size() - 1;
 	sort(people.begin(), people.end());
-	while (people.size() > 0) { 
-		int maxWeight = *(--people.end());
-		people.pop_back();  //맨뒤에 놈 꺼냈으니까 지우기
+	while (lastIdx>=startIdx){
 		res++;
-		if (people.size() == 0) //꺼낸 놈이 마지막인지를 check해줘야함
-			break;
-		int minWeight = *(people.begin());
+		int maxWeight = people[lastIdx];
+		int minWeight = people[startIdx];
+		lastIdx--;
 		if (maxWeight + minWeight <= limit)
-			people.erase(people.begin());
+			startIdx++;
 	}
 	return res;
 }
