@@ -12,8 +12,8 @@ for i in range(1,n+1):
     inp = list(map(int, input().split()))
     lec_len[i] = inp[0]
     for x in inp[1:-1]:
-        indegree[x]+=1 #x로 들어오는 노드 개수에 추가
-        graph[x].append(i) #x로 들어오는 노드 배열에 i를 추가
+        indegree[i]+=1 #i로 들어오는 노드 개수에 추가
+        graph[x].append(i) #i로 들어오는 노드 배열에 x를 추가
 
 
 def topology_sort():
@@ -23,7 +23,6 @@ def topology_sort():
     for i in range(1, n+1):
         if indegree[i]==0: #진입차수 0인 노드들을 q에 저장
             q.append(i)
-    print(q)
     while q:
         now = q.popleft()
         for i in graph[now]: #현재 노드로 진입하는 노드들에 대해

@@ -1,3 +1,7 @@
+#재귀쓸때 꿀팁
+import sys
+sys.setrecursionlimit(10**6)
+
 # 집 개수, 마을 개수
 n, m = map(int, input().split())
 
