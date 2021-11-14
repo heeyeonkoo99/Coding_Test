@@ -2,7 +2,6 @@ n = int(input())
 
 l = list(map(int, input().split()))
 '''
-
 l.sort(reverse=True) # 내림차순으로 정렬
 group = 0
 # l에 원소들이 있을때까지

@@ -25,5 +25,5 @@ def solution(food_times, k):
     # 음식의 번호 기준으로 정렬
     # 남은 시간(k-sum_value)을 남은 음식 개수로 나눈 후 얻어진 나머지값의 번호 반환
     
-    result = sorted(q, key=lambda x:x[1]) 
+    result = sorted(q, key=lambda x:x[1])
     return result[(k-sum_value)%length][1]

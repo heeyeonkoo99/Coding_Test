@@ -1,4 +1,5 @@
 import math
+
 # 문자가 모두 같도록
 # 연속된 하나이상의 숫자를 0<->1 변환
 l = list(input())
@@ -13,18 +14,18 @@ print(math.ceil(count/2))
 
 ######### 해답 #########
 #0으로 만드는 경우와 1로 만드는 경우 중 적게 걸리는 경우를 택함
-count0=0
-count1=0
-data = input()
-if l[0]=='1':
-    count0+=1
-else:
-    count1+=1
+# count0=0
+# count1=0
+# data = input()
+# if l[0]=='1':
+#     count0+=1
+# else:
+#     count1+=1
 
-for i in range(len(data)-1):
-    if data[i]!=data[i+1]:
-        if data[i+1]=='1':
-            count0+=1
-        else:
-            count1+=1
-print(min(count0, count1))
+# for i in range(len(data)-1):
+#     if data[i]!=data[i+1]:
+#         if data[i+1]=='1':
+#             count0+=1
+#         else:
+#             count1+=1
+# print(min(count0, count1))
